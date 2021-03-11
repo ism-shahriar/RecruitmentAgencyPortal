@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Get Category</title>
+</head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<body style="background-color: #CEECF5">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<h1 style="font-weight: bold; color: white">Recruitment Agency</h1>
+</nav>
+<div class="container" style="background-color: #CEECF5; width:50%">
+<br><h2 style="font-weight: bold">Update Category Info</h2><br>
+<form class="container text-dark" action="#" method="POST"
+th:action="@{/edit}"
+th:object="${category}"
+>
+<div class="form-group">
+Category Id: <input class="form-control" th:field="*{catId}" type="text" id="catId"/><br></br>
+
+Category Code: <input class="form-control" th:field="*{catCode}" type="text" id="catCode" /><br></br>
+
+Category Name: <input class="form-control" th:field="*{catName}" type="text" id="catName" /><br></br>
+
+Description: <input class="form-control" th:field="*{catDesc}" type="text" id="catDesc" /><br></br>
+
+<input type="submit" class="btn btn-primary mb-2" name="Update Job Category" />
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>

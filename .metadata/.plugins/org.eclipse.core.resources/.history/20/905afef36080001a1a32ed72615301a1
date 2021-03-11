@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Job Home</title>
+</head>
+<body>
+<ul>
+<li><a href="/job">Add a new Job</a></li>
+<li><a href="/show">View Job List</a></li>
+</ul>
+</body>
+</html>

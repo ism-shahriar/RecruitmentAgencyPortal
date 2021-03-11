@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Job Home</title>
+</head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<body style="background-color: #CEECF5">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<h1 style="font-weight: bold; color: white">Recruitment Agency Portal</h1>
+</nav>
+<div class="container" style="background-color: #CEECF5">
+<br><h2 style="font-weight: bold">List of Available Jobs</h2><br>
+	<table class="table table-dark table-striped">
+		<thead>
+			<tr>
+				<th>Job ID</th>
+				<th>Job Code</th>
+				<th>Job Title</th>
+				<th>Job Description</th>
+				<th>Publish Date</th>
+				<th>Number of Vacancy</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="job:${jobs}">
+				<td th:text="${job.jobId}">Job ID</td>
+				<td th:text="${job.jobCode}">Job Code</td>
+				<td th:text="${job.jobName}">Job Title</td>
+				<td th:text="${job.jobDesc}">Job Description</td>
+				<td th:text="${job.pubDate}">Publish Date</td>
+				<td th:text="${job.numVacancy}">Number of Vacancy</td>
+				<td><a class="btn btn-secondary" th:href="@{/edit/{id}(id=${job.jobId})}">Edit</a></td>
+				<td><a class="btn btn-secondary" th:href="@{/delete/{id}(id=${job.jobId})}">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+<br>
+		<a class="btn btn-dark" href="/job">Add New Job</a>
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,35 @@
+package com.example.server;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity
+@Table(name="employee")
+public class Job {
+	@Id
+	@GeneratedValue (strategy = GenerationType.AUTO)
+	@Column(name="jobId")
+	private int jobId;
+	@Column(name="jobCode")
+	private String jobCode;
+	@Column(name="jobName")
+	private String jobName;
+	@Column(name="jobDesc")
+	private String jobDesc;
+	@Column(name="date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate pubDate;
+	@Column(name="numVacancy")
+	private int numVacancy;
+	
+	
+
+}

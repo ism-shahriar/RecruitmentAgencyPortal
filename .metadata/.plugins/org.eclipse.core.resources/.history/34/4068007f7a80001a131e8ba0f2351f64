@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Show Category List</title>
+</head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<body style="background-color: #CEECF5">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<h1 style="font-weight: bold; color: white">Recruitment Agency</h1>
+</nav>
+<div class="container" style="background-color: #CEECF5">
+<br>
+<h3>Job Category List</h3>
+<br>
+<table class="table table-dark table-striped">
+		<thead>
+			<tr>
+				<th>Category Id</th>
+				<th>Category Code</th>
+				<th>Category Name</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="cat:${category}">
+				<td th:text="${cat.catId}">Category Id</td>
+				<td th:text="${cat.catCode}">Category Code</td>
+				<td th:text="${cat.catName}">Category Name</td>
+				<td th:text="${cat.catDesc}">Description</td>
+			
+				<td><a
+					th:href="@{/update/{id}(id=${cat.catId})}">Edit</a></td>
+				<td><a
+					th:href="@{/delete/{id}(id=${cat.catId})}">Delete</a></td>
+			</tr>
+			
+		</tbody>
+	</table>
+	
+
+</div>
+
+</body>
+</html>

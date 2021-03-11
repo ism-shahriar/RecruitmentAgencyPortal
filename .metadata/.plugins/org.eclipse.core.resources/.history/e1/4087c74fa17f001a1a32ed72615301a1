@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List of Jobs</title>
+</head>
+<body>
+	<h1>List of Available Jobs</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Job ID</th>
+				<th>Job Code</th>
+				<th>Job Title</th>
+				<th>Job Description</th>
+				<th>Posting Date</th>
+				<th>Number of Vacancy</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="job:${jobs}">
+				<td th:text="${job.jobId}">Job ID</td>
+				<td th:text="${job.jobCode}">Job Code</td>
+				<td th:text="${job.jobName}">Job Title</td>
+				<td th:text="${job.jobDesc}">Job Description</td>
+				<td th:text="${job.date}">Posting Date</td>
+				<td th:text="${job.numVacancy}">Number of Vacancy</td>
+				<td><a th:href="@{/edit/{id}(id=${job.jobId})}">Update</a></td>
+				<td><a th:href="@{/delete/{id}(id=${job.jobId})}">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>
+		<a href="/">Return Home</a>
+	</p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Job</title>
+</head>
+<body>
+<h1>Add a New Job</h1>
+    <form action="#" th:action="@{/add}" th:object="${job}" method="post">
+    this. = jobCode;
+		this. = jobName;
+		this. = jobDesc;
+		this.pubDate = pubDate;
+		this.numVacancy = numVacancy;
+    
+    <label for="jobCode">Job Code</label>
+    <input type="text" th:field="*{jobCode}" id="jobCode">
+    <span th:if="${#fields.hasErrors('jobCode')}" th:errors="*{jobCode}"></span>
+    
+    <label for="jobName">Job Title</label>
+    <input type="text" th:field="*{jobName}" id="jobName">
+    <span th:if="${#fields.hasErrors('jobName')}" th:errors="*{jobName}"></span>
+    
+     <label for="jobDesc">Job Description</label>
+    <input type="text" th:field="*{jobDesc}" id="jobDesc">
+    <span th:if="${#fields.hasErrors('jobDesc')}" th:errors="*{jobDesc}"></span>
+    
+     <label for="jobName">Job Title</label>
+    <input type="text" th:field="*{jobName}" id="jobName">
+    <span th:if="${#fields.hasErrors('jobName')}" th:errors="*{jobName}"></span>
+    
+     <label for="jobName">Job Title</label>
+    <input type="text" th:field="*{jobName}" id="jobName">
+    <span th:if="${#fields.hasErrors('jobName')}" th:errors="*{jobName}"></span>
+    
+    <input type="submit" value="Add Department">
+</form> 
+</body>
+</html>

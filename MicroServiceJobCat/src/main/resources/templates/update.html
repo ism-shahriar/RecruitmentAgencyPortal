@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Get Category</title>
+</head>
+<body>
+
+<form action="#" method="POST"
+th:action="@{/edit}"
+th:object="${category}"
+>
+
+Category Id: <input th:field="*{catId}" type="text" id="catId"/><br></br>
+
+Category Code: <input th:field="*{catCode}" type="text" id="catCode" /><br></br>
+
+Category Name: <input th:field="*{catName}" type="text" id="catName" /><br></br>
+
+Description: <input th:field="*{catDesc}" type="text" id="catDesc" /><br></br>
+
+<input type="submit" name="Update Job Category" />
+</form>
+
+</body>
+</html>

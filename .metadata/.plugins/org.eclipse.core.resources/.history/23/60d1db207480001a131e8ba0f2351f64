@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Job Category</title>
+</head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<body style="background-color: #CEECF5">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<h1 style="font-weight: bold; color: white">Recruitment Agency</h1>
+</nav>
+	<div class="container-fluid" style="background-color: #CEECF5">
+	<br><br><h4>Job Category Info</h4>
+		<form class="container text-dark" action="add" method="POST">
+			Category Id: <input type="text" name="catId" /><br></br>
+			Category Code: <input type="text" name="catCode" /><br></br>
+			Category Name: <input type="text" name="catName" /><br></br>
+			Description: <textarea name="catDesc"></textarea><br></br>
+
+			<button type="submit" class="btn btn-primary mb-2"
+				style="width: 100%; font-weight: bold">Add New Category</button>
+</form>
+	
+	</div>
+
+</body>
+</html>

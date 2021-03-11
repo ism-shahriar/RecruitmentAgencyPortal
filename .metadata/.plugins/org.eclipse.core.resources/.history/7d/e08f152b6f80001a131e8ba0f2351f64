@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Organization</title>
+</head>
+<body>
+	<h1>Update Organization Info</h1>
+	<form action="#" th:action="@{/add}" th:object="${organization}" method="post">
+
+
+		<label for="orgId">Job Code</label> <input type="text"
+			th:field="*{orgId}" id="orgId"> 
+		
+		<label for="orgName">Job Code</label> <input type="text"
+			th:field="*{orgName}" id="orgName"> <span
+			th:if="${#fields.hasErrors('orgName')}" th:errors="*{orgName}"></span>
+
+		<label for="address">Job Title</label> <input type="text"
+			th:field="*{address}" id="address"> <span
+			th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
+
+		<label for="postalCode">Job Description</label> <input type="text"
+			th:field="*{postalCode}" id="postalCode"> 
+			
+		<label for="phone">Publish Date</label> <input type="text"
+			th:field="*{phone}" id="phone"> 
+
+		<label for="website">Number of Vacancy</label> <input type="text"
+			th:field="*{website}" id="website"> 
+			
+		<label for="email">Number of Vacancy</label> <input type="text"
+			th:field="*{email}" id="email"> 
+
+		<input type="submit" value="Add Organization">
+	</form>
+</body>
+</html>

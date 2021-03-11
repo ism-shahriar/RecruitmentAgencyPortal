@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Organization</title>
+</head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<body style="background-color: #CEECF5">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<h1 style="font-weight: bold; color: white">Recruitment Agency Portal</h1>
+</nav>
+<div class="container" style="background-color: #CEECF5">
+<br><h2 style="font-weight: bold">Add New Organization</h2><br>
+	
+	<form class="container text-dark" action="#" th:action="@{/add}" th:object="${organization}" method="post">
+
+
+		<div class="form-group">
+		
+		</div>
+		
+		<div class="form-group">
+		
+		</div>
+		
+		<div class="form-group">
+		
+		</div>
+		
+		<div class="form-group">
+		
+		</div>
+		
+		<div class="form-group">
+		
+		</div>
+		
+		<div class="form-group">
+		
+		</div>
+		<label for="orgName">Organization Name:</label> <input class="form-control" type="text"
+			th:field="*{orgName}" id="orgName"> <span
+			th:if="${#fields.hasErrors('orgName')}" th:errors="*{orgName}"></span>
+
+		<label for="address">Address:</label> <input class="form-control" type="text"
+			th:field="*{address}" id="address"> <span
+			th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
+
+		<label for="postalCode">Postal Code:</label> <input class="form-control" type="text"
+			th:field="*{postalCode}" id="postalCode"> 
+			
+		<label for="phoneNo">Phone:</label> <input class="form-control" type="text"
+			th:field="*{phoneNo}" id="phoneNo"> 
+
+		<label for="website">Email:</label> <input class="form-control" type="text"
+			th:field="*{website}" id="website"> 
+			
+		<label for="email">Website:</label> <input class="form-control" type="text"
+			th:field="*{email}" id="email"> 
+
+		<input type="submit" value="Add Organization" class="btn btn-dark">
+	</form>
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Job</title>
+</head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<body style="background-color: #CEECF5">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<h1 style="font-weight: bold; color: white">Recruitment Agency Portal</h1>
+</nav>
+
+<div class="container" style="background-color: #CEECF5; width:50%">
+<br>
+<h2 style="font-weight: bold">Update Job Info</h2>
+<br>
+	<form class="container text-dark" action="#" th:action="@{/add}" th:object="${job}" method="post">
+
+		<div class="form-group">
+			<label for="jobId">Job ID:</label> <input type="text"
+			th:field="*{jobId}" id="jobId">
+		</div>
+		
+		<div class="form-group">
+			<label for="jobCode">Job Code:</label> <input class="form-control" type="text"
+			th:field="*{jobCode}" id="jobCode"> <span
+			th:if="${#fields.hasErrors('jobCode')}" th:errors="*{jobCode}"></span>
+		</div>
+		
+		<div class="form-group">
+		<label for="jobName">Job Title:</label> <input class="form-control" type="text"
+			th:field="*{jobName}" id="jobName"> <span
+			th:if="${#fields.hasErrors('jobName')}" th:errors="*{jobName}"></span>
+		</div>
+		<label for="jobDesc">Job Description:</label> <textarea class="form-control" type="text"
+			th:field="*{jobDesc}" id="jobDesc"></textarea> 
+		<div class="form-group">
+		<label for="pubDate">Publish Date:</label> <input class="form-control" type="text"
+			th:field="*{pubDate}" id="pubDate"> 
+		</div>
+		<label for="numVacancy">Number of Vacancy:</label> <input class="form-control" type="text"
+			th:field="*{numVacancy}" id="numVacancy"> 
+		<div class="form-group">
+		
+		</div>
+		
+
+		<input type="submit" value="Update" class="btn btn-dark">
+		
+		
+	</form>
+</div>
+	
+</body>
+</html>

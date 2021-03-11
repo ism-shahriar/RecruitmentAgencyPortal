@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Job Home</title>
+</head>
+<body>
+	<h1>List of Available Jobs</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Org ID</th>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Postal Code</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th>Website</th>
+
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="org:${organizations}">
+				<td th:text="${org.orgId}">Org ID</td>
+				<td th:text="${org.orgId}">Name</td>
+				<td th:text="${org.orgId}">Address</td>
+				<td th:text="${org.orgId}">Postal Code</td>
+				<td th:text="${org.orgId}">Phone</td>
+				<td th:text="${org.orgId}">Email</td>
+				<td th:text="${org.orgId}">Website</td>
+				<td><a th:href="@{/edit/{id}(id=${organization.orgId})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${organization.orgId})}">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>
+		<a href="/job">Add New Job</a>
+	</p>
+</body>
+</html>
